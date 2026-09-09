@@ -1,10 +1,142 @@
-;; A floor that pulls a dependency is not a floor.
 {:paths ["src"]
- :deps {org.clojure/clojure {:mvn/version "1.12.0"}}
+ :deps {
+        io.github.kotoba-lang/string-blank-text
+        {:git/url "https://github.com/kotoba-lang/string-blank-text.git"
+         :git/sha "d399ab71f31f5c6efe47bca5b12f852a810c0c6d"}
+        io.github.kotoba-lang/string-blank
+        {:git/url "https://github.com/kotoba-lang/string-blank.git"
+         :git/sha "9909c74e15993cbf006a281518c35d608e37f08b"}
+        io.github.kotoba-lang/string-capitalize
+        {:git/url "https://github.com/kotoba-lang/string-capitalize.git"
+         :git/sha "c9b0920476a80dbcbf12d80f3e1d942740597976"}
+        io.github.kotoba-lang/string-codepoints
+        {:git/url "https://github.com/kotoba-lang/string-codepoints.git"
+         :git/sha "09de8d71f9b00b65d67d6b9bc7cc3ea9d36868a4"}
+        io.github.kotoba-lang/string-ends-with
+        {:git/url "https://github.com/kotoba-lang/string-ends-with.git"
+         :git/sha "0f02658c1807fc2fea7c63d2ff7a151869370e7c"}
+        io.github.kotoba-lang/string-escape
+        {:git/url "https://github.com/kotoba-lang/string-escape.git"
+         :git/sha "ada9570c21feb2a8085d44455d2692601088a0aa"}
+        io.github.kotoba-lang/string-format
+        {:git/url "https://github.com/kotoba-lang/string-format.git"
+         :git/sha "857d5895ca581c83b95f6197c12a8ef112b460b0"}
+        io.github.kotoba-lang/string-from-codepoints
+        {:git/url "https://github.com/kotoba-lang/string-from-codepoints.git"
+         :git/sha "7a26387d2f8e621e015828c17fbf28e2f346b2e3"}
+        io.github.kotoba-lang/string-includes
+        {:git/url "https://github.com/kotoba-lang/string-includes.git"
+         :git/sha "2320a1469834b8826abf89c9bab46d50d33cc5c9"}
+        io.github.kotoba-lang/string-index-of
+        {:git/url "https://github.com/kotoba-lang/string-index-of.git"
+         :git/sha "b8fd28eac8b6334d1569add8d27b9d5d1d8d5a3b"}
+        io.github.kotoba-lang/string-index-of-text
+        {:git/url "https://github.com/kotoba-lang/string-index-of-text.git"
+         :git/sha "f9181506800e037ac45214c44aeb9268e8d8a247"}
+        io.github.kotoba-lang/string-join
+        {:git/url "https://github.com/kotoba-lang/string-join.git"
+         :git/sha "d3e00bf9047a81534f73052b509851bcd751d94e"}
+        io.github.kotoba-lang/string-last-index-of
+        {:git/url "https://github.com/kotoba-lang/string-last-index-of.git"
+         :git/sha "9af07eb2e694a04e96b7acf34b6400c326ec3a43"}
+        io.github.kotoba-lang/string-last-index-of-text
+        {:git/url "https://github.com/kotoba-lang/string-last-index-of-text.git"
+         :git/sha "c556447902a8920c8545f264f3b8a96b1dcf040f"}
+        io.github.kotoba-lang/string-lower
+        {:git/url "https://github.com/kotoba-lang/string-lower.git"
+         :git/sha "28f96eea950001e0ee88f2bc85a57a5eee824093"}
+        io.github.kotoba-lang/string-pad-center-text
+        {:git/url "https://github.com/kotoba-lang/string-pad-center-text.git"
+         :git/sha "375b943467ea1a19906cc047c90662e2568ee4c5"}
+        io.github.kotoba-lang/string-pad-left
+        {:git/url "https://github.com/kotoba-lang/string-pad-left.git"
+         :git/sha "b92cf8c6f2591e8e96ae8e5ad8e5dcba07bf031a"}
+        io.github.kotoba-lang/string-pad-left-text
+        {:git/url "https://github.com/kotoba-lang/string-pad-left-text.git"
+         :git/sha "ba92dcdddc5ca0d37ae61c18ce2739620741805c"}
+        io.github.kotoba-lang/string-pad-right
+        {:git/url "https://github.com/kotoba-lang/string-pad-right.git"
+         :git/sha "eedc3d2d9e1df2313b81258f8c393b0746e10de4"}
+        io.github.kotoba-lang/string-pad-right-text
+        {:git/url "https://github.com/kotoba-lang/string-pad-right-text.git"
+         :git/sha "3cb4cccb2619f3391f65f18698f6714716173042"}
+        io.github.kotoba-lang/string-re-find
+        {:git/url "https://github.com/kotoba-lang/string-re-find.git"
+         :git/sha "f30553c55c7b4757b46d334e7a7fccd1dd63902e"}
+        io.github.kotoba-lang/string-re-matches
+        {:git/url "https://github.com/kotoba-lang/string-re-matches.git"
+         :git/sha "a3d493f788ff0f01e18c98126327f662da0fc6e2"}
+        io.github.kotoba-lang/string-re-seq
+        {:git/url "https://github.com/kotoba-lang/string-re-seq.git"
+         :git/sha "201adc5632be3c3f0047ec5194ffce1ee0a48bb2"}
+        io.github.kotoba-lang/string-repeat-text
+        {:git/url "https://github.com/kotoba-lang/string-repeat-text.git"
+         :git/sha "14ed1f337497dda8fea704c13aad1819125ca746"}
+        io.github.kotoba-lang/string-replace
+        {:git/url "https://github.com/kotoba-lang/string-replace.git"
+         :git/sha "65f55296dea8905f445c780514ace36908ff0f57"}
+        io.github.kotoba-lang/string-replace-first
+        {:git/url "https://github.com/kotoba-lang/string-replace-first.git"
+         :git/sha "c2e0c5d25131fb77f44c39b04f73ccd903570836"}
+        io.github.kotoba-lang/string-replace-first-text
+        {:git/url "https://github.com/kotoba-lang/string-replace-first-text.git"
+         :git/sha "fa9b1c77344526fda7057d0d936a711c91798cb7"}
+        io.github.kotoba-lang/string-reverse
+        {:git/url "https://github.com/kotoba-lang/string-reverse.git"
+         :git/sha "5dac11fb7a5b6b0dbf268946b924a90ca9615ee9"}
+        io.github.kotoba-lang/string-reverse-text
+        {:git/url "https://github.com/kotoba-lang/string-reverse-text.git"
+         :git/sha "66037f1bfa43d371fd961bd87ed3d0a194660ee6"}
+        io.github.kotoba-lang/string-segment-count-text
+        {:git/url "https://github.com/kotoba-lang/string-segment-count-text.git"
+         :git/sha "ce06b3b9166105b86b413d4c288ba63529c26f28"}
+        io.github.kotoba-lang/string-segment-text
+        {:git/url "https://github.com/kotoba-lang/string-segment-text.git"
+         :git/sha "9334fedec78b3a5ff251eba90646c57bfeab75aa"}
+        io.github.kotoba-lang/string-spec-re
+        {:git/url "https://github.com/kotoba-lang/string-spec-re.git"
+         :git/sha "970ba3173fa6cd5dd08db1a65a725ddf1d35ceb0"}
+        io.github.kotoba-lang/string-split
+        {:git/url "https://github.com/kotoba-lang/string-split.git"
+         :git/sha "2f462f5bcd40177e3d7fca11034ac80577dc9567"}
+        io.github.kotoba-lang/string-split-lines
+        {:git/url "https://github.com/kotoba-lang/string-split-lines.git"
+         :git/sha "577be9fc4cecbe688169b1b971cd585a8043ebf7"}
+        io.github.kotoba-lang/string-starts-with
+        {:git/url "https://github.com/kotoba-lang/string-starts-with.git"
+         :git/sha "2951af81e5d59595efb65988a0dd3324cd3efba8"}
+        io.github.kotoba-lang/string-trim
+        {:git/url "https://github.com/kotoba-lang/string-trim.git"
+         :git/sha "07558226635dc15200d843a81c556e197792596f"}
+        io.github.kotoba-lang/string-trim-newline
+        {:git/url "https://github.com/kotoba-lang/string-trim-newline.git"
+         :git/sha "745a845f2988fed0aaf75d32401336720313a32b"}
+        io.github.kotoba-lang/string-trim-newline-text
+        {:git/url "https://github.com/kotoba-lang/string-trim-newline-text.git"
+         :git/sha "b3df63484460508074024eabad068057671c34d1"}
+        io.github.kotoba-lang/string-trim-text
+        {:git/url "https://github.com/kotoba-lang/string-trim-text.git"
+         :git/sha "5b5e012ed5c6fb4552dcd2ef4f6040941cd7ba9d"}
+        io.github.kotoba-lang/string-triml
+        {:git/url "https://github.com/kotoba-lang/string-triml.git"
+         :git/sha "1e1e5eefc2081c464bbbe28d3d268ae4aadd535e"}
+        io.github.kotoba-lang/string-triml-text
+        {:git/url "https://github.com/kotoba-lang/string-triml-text.git"
+         :git/sha "476eef813e3d5dc3b3785f2cd8df68d4e82d3354"}
+        io.github.kotoba-lang/string-trimr
+        {:git/url "https://github.com/kotoba-lang/string-trimr.git"
+         :git/sha "fab937fda97e9f05c283712c7d1a07e1ca13707a"}
+        io.github.kotoba-lang/string-trimr-text
+        {:git/url "https://github.com/kotoba-lang/string-trimr-text.git"
+         :git/sha "0a380156d041a23f034f290d5c2314fca0b2d7c1"}
+        io.github.kotoba-lang/string-truncate
+        {:git/url "https://github.com/kotoba-lang/string-truncate.git"
+         :git/sha "7849ff82415b9dfdeaa629e290b1d9368b03d457"}
+        io.github.kotoba-lang/string-upper
+        {:git/url "https://github.com/kotoba-lang/string-upper.git"
+         :git/sha "7fb19193dbde60feb49caece2a6b714a24cead7d"}}
  :aliases
  {:test {:extra-paths ["test"]
          :extra-deps {io.github.cognitect-labs/test-runner
-                      {:git/url "https://github.com/cognitect-labs/test-runner.git"
-                       :git/sha "dfb30dd6605cb6c0efc275e1df1736f6e90d4d73"}}
-         :main-opts ["-m" "cognitect.test-runner"]
-         :exec-fn cognitect.test-runner.api/test}}}
+                      {:git/tag "v0.5.1" :git/sha "dfb30dd"}}
+         :main-opts ["-m" "cognitect.test-runner"]}}}
