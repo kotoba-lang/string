@@ -10,7 +10,7 @@
   Inputs on which clojure.string deliberately disagrees with itself across
   hosts are NOT in the parity corpus; they are pinned separately below with
   the answer this namespace gives on every host."
-  (:require [clojure.string :as cstr]
+  (:require [kotoba.lang.text :as cstr]
             [clojure.test :refer [deftest is testing]]
             [kotoba.string :as t]))
 
@@ -64,7 +64,7 @@
      ;; JVM's answer, so on the JVM parity must be exact; the same inputs are
      ;; pinned for BOTH hosts in the next test, so nothing is merely skipped.
      (doseq [[s re limit] divergent-split-cases]
-       (same (vec (clojure.string/split s re limit)) (vec (t/split s re limit))
+       (same (vec (cstr/split s re limit)) (vec (t/split s re limit))
              (pr-str [s (str re) limit])))))
 
 (deftest split-answers-the-jvm-way-on-every-host
@@ -88,8 +88,8 @@
 
 (deftest case-parity
   (doseq [s corpus]
-    (same (cstr/upper-case s) (t/upper s) (pr-str s))
-    (same (cstr/lower-case s) (t/lower s) (pr-str s))
+    (same (cstr/upper s) (t/upper s) (pr-str s))
+    (same (cstr/lower s) (t/lower s) (pr-str s))
     (same (cstr/capitalize s) (t/capitalize s) (pr-str s))))
 
 (deftest predicate-parity
@@ -185,7 +185,7 @@
 ;; ---------------------------------------------------------------------------
 
 (deftest whitespace-class-is-javas-on-every-host
-  ;; clojure.string/trim means two different things on its two hosts. These
+  ;; cstr/trim means two different things on its two hosts. These
   ;; assertions are the same on both hosts here, which is the whole point of
   ;; not delegating -- and they fail loudly if the class is ever widened.
   (testing "non-breaking spaces are NOT whitespace (Java's answer, not JS's)"
@@ -218,7 +218,7 @@
     (same (cstr/blank? s) (t/blank? s) (pr-str [:blank s]))))
 
 (deftest replacement-template-follows-the-jvm-rules-on-every-host
-  ;; `$&` is a JS-ism. On the JVM `clojure.string/replace` leaves it alone
+  ;; `$&` is a JS-ism. On the JVM `cstr/replace` leaves it alone
   ;; (there is no group named &); this namespace does the same everywhere.
   (is (= "[$&]" (t/replace "a" #"a" "[$&]")))
   (is (= "[a]" (t/replace "a" #"a" "[$0]")))
@@ -245,9 +245,9 @@
               [#"(a)(b)" ["[$0]" "a\\$b"]]]
              s     corpus
              repl  repls]
-       (same (clojure.string/replace s match repl) (t/replace s match repl)
+       (same (cstr/replace s match repl) (t/replace s match repl)
              (pr-str [:replace s (str match) repl]))
-       (same (clojure.string/replace-first s match repl)
+       (same (cstr/replace-first s match repl)
              (t/replace-first s match repl)
              (pr-str [:replace-first s (str match) repl])))))
 
